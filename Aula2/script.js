@@ -14,8 +14,7 @@ MinhaLista.controller('TarefasController', function ($scope) {
 
    $scope.add = function () {
       $scope.tarefas.push($scope.tarefa);
-      $scope.nome = '';
-      $scope.prioridade = '';
+      $scope.tarefa = {};
    };
 
    $scope.delete = function(i) {
