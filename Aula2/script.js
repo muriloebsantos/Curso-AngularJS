@@ -1,7 +1,7 @@
 var MinhaLista = angular.module('MinhaLista', []);
 
 MinhaLista.controller('TarefasController', function ($scope) {
-   $scope.log = [
+   $scope.tarefas = [
      {
         'nome': "Ir trabalhar",
         'prioridade': 1
