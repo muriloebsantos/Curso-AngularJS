@@ -13,11 +13,7 @@ MinhaLista.controller('TarefasController', function ($scope) {
    ];
 
    $scope.add = function () {
-      var tarefa = {
-        'nome': $scope.nome,
-        'prioridade': $scope.prioridade
-      };
-      $scope.tarefas.push(tarefa);
+      $scope.tarefas.push($scope.tarefa);
       $scope.nome = '';
       $scope.prioridade = '';
    };
