@@ -6,8 +6,9 @@
   </head>
   <body>
     <div ng-controller="TarefasController">
+      <input type="text" ng-model="busca">
        <ul>
-         <li ng-repeat="(key, tarefa) in tarefas">
+         <li ng-repeat="(key, tarefa) in tarefas | filter:busca">
            {{tarefa.nome}} - {{tarefa.prioridade}}
            <a href="#" ng-click="delete(key)">Remover</a>
          </li>
