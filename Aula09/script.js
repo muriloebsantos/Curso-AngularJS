@@ -6,6 +6,8 @@ diretivas.controller('DiretivasController', function($scope){
 
 diretivas.directive('efDev', function() {
    return {
-     template: "<strong>Desenvolvedor:</strong> {{dev}}"
+     templateUrl: function(){
+       return 'partials/dev.html'
+     }
    }
 });
