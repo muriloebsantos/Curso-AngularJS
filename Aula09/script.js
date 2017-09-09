@@ -2,10 +2,18 @@ var diretivas = angular.module('Diretivas', []);
 
 diretivas.controller('DiretivasController', function($scope){
   $scope.dev = 'Murilo E B Santos';
+  $scope.idade = 25;
 });
 
 diretivas.directive('efDev', function() {
    return {
-     template: "<strong>Desenvolvedor:</strong> {{dev}}"
+     templateUrl: function(elem, attr){
+       if(!attr.type){
+         var type = 'dev';
+       } else {
+         var type = attr.type;
+       }
+       return 'partials/' + type + '.html'
+     }
    }
 });
