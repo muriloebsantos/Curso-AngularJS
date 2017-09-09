@@ -12,6 +12,10 @@ MinhaLista.controller('TarefasController', function ($scope) {
      }
    ];
 
+   $scope.nome = 'Murilo E B Santos';
+   $scope.idade = 25;
+   $scope.salario = 1000;
+
    $scope.add = function () {
       $scope.tarefas.push($scope.tarefa);
       $scope.tarefa = {};
