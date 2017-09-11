@@ -8,6 +8,7 @@ diretivas.controller('DiretivasController', function($scope){
 
 diretivas.directive('efDev', function() {
    return {
+     restrict: "EA", // elemento (E), classe (C), attributo (A), ou  EAC ou EA
      templateUrl: function(elem, attr){
        if(!attr.type){
          var type = 'dev';
