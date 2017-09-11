@@ -1,14 +1,20 @@
 var diretivas = angular.module('Diretivas', []);
 
-// criando o controller 
+// criando o controller
 diretivas.controller('DiretivasController', function($scope){
   $scope.dev = 'Murilo E B Santos';
+  $scope.idade = 25;
 });
 
 diretivas.directive('efDev', function() {
    return {
-     templateUrl: function(){
-       return 'partials/dev.html'
+     templateUrl: function(elem, attr){
+       if(!attr.type){
+         var type = 'dev';
+       } else {
+         var type = attr.type;
+       }
+       return 'partials/' + type + '.html'
      }
    }
 });
