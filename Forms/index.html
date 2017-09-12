@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="Formulario">
+  <head>
+    <meta charset="utf-8">
+    <title>Formulários</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="script.js" charset="utf-8"></script>
+    <style type="text/css">
+       form input.ng-touched.ng-invalid {
+         border:2px solid red;
+       }
+
+       form input.ng-valid {
+         border:1px solid green;
+       }
+
+    </style>
+  </head>
+  <body ng-controller="FormController">
+      <form ng-submit="salvar(formulario)">
+        Nome: <input type="text" ng-model="formulario.nome" required> <br>
+        E-mail: <input type="email" ng-model="formulario.email" required> <br>
+        Genero: <input type="radio" ng-model="formulario.genero" value="masculino"> Masculino -
+                <input type="radio" ng-model="formulario.genero" value="feminino"> Feminino <br>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Reset" ng-click="reset()">
+        <hr>
+        <pre>
+           {{formulario}}
+        </pre>
+        <hr>
+        <pre>
+          {{salvo}}
+        </pre>
+      </form>
+  </body>
+</html>
