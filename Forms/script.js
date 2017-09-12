@@ -13,7 +13,7 @@ myApp.directive('minIdade', function() {
          if(ctrl.$isEmpty(modelValue))
            return false;
 
-         return modelValue > 13;
+         return modelValue >= attr.minIdade;
       }
     }
   }
