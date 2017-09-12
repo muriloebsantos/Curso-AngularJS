@@ -33,6 +33,14 @@
           </ul>
         </div>
          <br>
+        Idade: <input type="text" name="idade" ng-model="formulario.idade" required min-idade>
+        <div ng-show="form1.idade.$touched">
+          <ul>
+            <li ng-show="form1.idade.$error.required">Este campo é obrigatório</li>
+            <li ng-show="form1.idade.$error.idade">Voce nao tem idade suficiente</li>
+          </ul>
+        </div>
+        <br>
         Genero: <input type="radio" ng-model="formulario.genero" value="masculino"> Masculino -
                 <input type="radio" ng-model="formulario.genero" value="feminino"> Feminino <br>
         <input type="submit" value="Enviar" ng-disabled="form1.$invalid">

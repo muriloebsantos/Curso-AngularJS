@@ -4,6 +4,21 @@ var log = function(data) {
 
 var myApp = angular.module('Formulario', []);
 
+myApp.directive('minIdade', function() {
+  return {
+    restrict: 'A',
+    require: 'ngModel',
+    link: function($scope, elm, attr, ctrl){
+      ctrl.$validators.idade = function(modelValue){
+         if(ctrl.$isEmpty(modelValue))
+           return false;
+
+         return modelValue > 13;
+      }
+    }
+  }
+});
+
 myApp.controller("FormController", function($scope){
   var reset = function(){
     $scope.formulario = '';
