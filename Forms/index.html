@@ -17,12 +17,25 @@
     </style>
   </head>
   <body ng-controller="FormController">
-      <form ng-submit="salvar(formulario)">
-        Nome: <input type="text" ng-model="formulario.nome" required> <br>
-        E-mail: <input type="email" ng-model="formulario.email" required> <br>
+      <form novalidate name="form1" ng-submit="salvar(formulario)">
+        Nome: <input name="nome" type="text" ng-model="formulario.nome" required>
+        <div ng-show="form1.$submitted || form1.nome.$touched">
+          <ul>
+            <li ng-show="form1.nome.$error.required">Este campo é obrigatório</li>
+          </ul>
+        </div>
+        <br>
+        E-mail: <input name="email" type="email" ng-model="formulario.email" required>
+        <div ng-show="form1.email.$touched">
+          <ul>
+            <li ng-show="form1.email.$error.required">Este campo é obrigatório</li>
+            <li ng-show="form1.email.$error.email">Isto não é um e-mail</li>
+          </ul>
+        </div>
+         <br>
         Genero: <input type="radio" ng-model="formulario.genero" value="masculino"> Masculino -
                 <input type="radio" ng-model="formulario.genero" value="feminino"> Feminino <br>
-        <input type="submit" value="Enviar">
+        <input type="submit" value="Enviar" ng-disabled="form1.$invalid">
         <input type="reset" value="Reset" ng-click="reset()">
         <hr>
         <pre>
