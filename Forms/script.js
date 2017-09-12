@@ -19,9 +19,19 @@ myApp.directive('minIdade', function() {
   }
 });
 
-myApp.controller("FormController", function($scope){
+myApp.controller("FormController", function($scope, $http){
   var reset = function(){
     $scope.formulario = '';
+  };
+
+  $scope.get = function(){
+    $http.get('http://localhost/angularjs/Curso-AngularJS/Forms/server-http/usuarios/')
+          .then(function(data){
+              $scope.formulario = data;
+          },
+          function(data, status, headers, config){
+            log(data);
+          });
   };
 
   $scope.salvar = function(form_data){

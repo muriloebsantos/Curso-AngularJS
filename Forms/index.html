@@ -17,7 +17,7 @@
     </style>
   </head>
   <body ng-controller="FormController">
-      <form novalidate name="form1" ng-submit="salvar(formulario)">
+      <form novalidate name="form1" ng-submit="salvar(formulario)" ng-init="get()">
         Nome: <input name="nome" type="text" ng-model="formulario.nome" required>
         <div ng-show="form1.$submitted || form1.nome.$touched">
           <ul>

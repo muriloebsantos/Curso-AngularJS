@@ -1,0 +1,29 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+    <h1>Minhas páginas</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>title</th>
+            <th>content</th>
+            <th>ações</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for page in pages %}
+        <tr>
+            <td>{{ page.id }}</td>
+            <td>{{ page.title }}</td>
+            <td>{{ page.content }}</td>
+            <td>
+                <a href="{{ path('view', {id:page.id}) }}">View</a>
+                <a href="{{ path('edit', {id:page.id}) }}">Edit</a>
+                <a href="{{ path('delete', {id:page.id}) }}">Remove</a>
+            </td>
+        </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

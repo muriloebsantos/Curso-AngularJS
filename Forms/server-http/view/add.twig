@@ -1,0 +1,10 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+    <h1>Nova página</h1>
+    <form action="{{ path('save') }}" method="post"><br/>
+        <input type="text" name="title"/><br/>
+        <textarea name="content" id="" cols="30" rows="10"></textarea><br/>
+        <input type="submit" value="Salvar"/>
+    </form>
+{% endblock %}
